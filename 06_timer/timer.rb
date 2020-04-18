@@ -12,7 +12,7 @@ class Timer
 
     return "00:00:00" if @seconds == 0
 
-    #hours first.
+    #hours
     if counter % 3600 > 0
       hrs = counter / 3600
       time << padded(hrs)
@@ -21,6 +21,7 @@ class Timer
       time << "00"
     end
 
+    #min
     if counter % 60 > 0
       min = counter / 60 
       time << padded(min)
@@ -29,10 +30,10 @@ class Timer
       time << "00"
     end
 
+    #seconds
     time << padded(counter)
 
     @seconds = time.join(":")
-    
 
   end
 
